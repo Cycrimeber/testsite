@@ -1,0 +1,142 @@
+*{
+	box-sizing: border-box;
+}
+
+html{
+	background-color: #444;
+	font-family: serif, sans-serif, times new roman;
+}
+body{
+	text-align: center;
+	margin: 0;
+	line-height: 1;
+}
+
+.big_container{
+	background-color: #DCD3D3;
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-rows: 100px 80px auto 40px;
+	width: 90%;
+	border: 1px solid blue;
+	margin: auto;
+	grid-template-areas:
+	'head head head'
+	'nav nav nav'
+	'aside main main'
+	'footer footer footer'
+}
+
+/*#######################BANNER######################*/
+
+.big_container > header{
+	grid-area: head;
+	border: 1px solid red;
+}
+
+/*#######################NAVIGATION######################*/
+nav{
+	grid-area: nav;
+	border: 1px solid brown;
+}
+
+nav ul{
+	
+}
+
+nav ul li{
+	display: inline;
+	border: 1px solid gray;
+	padding: 10px;
+	border-radius: 50px;
+	margin-right: 10px;
+	float: left;
+	background-color: coral;
+}
+
+nav ul li:hover{
+	background-color: #BCFF51;
+	border: none;
+}
+
+nav ul li a:hover{
+	color: white;
+}
+
+.nav_right{
+	float: right;
+}
+
+nav ul li a{
+	text-decoration: none;
+}
+
+
+/*#######################MAIN SECTION######################*/
+main{
+	grid-area: main;
+	border: 1px solid coral;
+}
+
+/*#######################SIDE NEWS######################*/
+aside{
+	grid-area: aside;
+	border: 1px solid purple;
+}
+
+aside ul li{
+	text-decoration: none;
+	/*list-style: none;*/
+	list-style-type: square;
+	text-align: left;
+}
+
+aside ul li a{
+	text-decoration: none;
+}
+
+aside ul li a:hover{
+	color: #AFFF5C;
+	background-color: #00FF85;
+}
+
+/*#######################FOOTER######################*/
+footer{
+	grid-area: footer;
+	border: 1px solid yellow;
+}
+
+/*#######################MEDIA QUERIES######################*/
+@media (max-width: 576px) /*and (max-width: 960px)*/{
+	html{
+		background-color: white;
+	}
+	body{
+		background-color: orange;
+	}
+
+	.big_container{
+		background-color: coral;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+
+	}
+	aside{
+		display: none;
+	}
+
+	nav ul li, .nav_right{
+	display: block;
+	border: 1px solid gray;
+	background-color: white;
+	float: none;
+	margin: auto;
+	padding: 3px;
+	width: 50%;
+	}
+}
+
+@media (min-width: 768px){
+	
+}
